@@ -6,20 +6,12 @@ on:
   pull_request:
     branches: [ main ]
   workflow_dispatch:
-      inputs:
-        name:
-          description: 'Person to greet'
-          required: true
-          default: 'Mona the Octocat'
-
-        home:
-          description: 'location'
-          required: false
-          default: 'The Octoverse'
-            
-        perform_deploy:
-          required: true
-          type: boolean  
+    inputs:
+      environment:
+        description: 'Environment'
+        type: environment
+        default: dev
+        required: true
 
 jobs:
   Build:
